@@ -20,4 +20,31 @@ public class FunWith2dArrays {
         toPrint += grid[height - 1][width - 1] + "\n";
         System.out.print(toPrint);
     }
+
+    public static double average(int[][] arr) {
+        double sum = 0;
+        int size = arr.length * arr[0].length;
+
+        for (int[] row : arr) {
+            for (int column : row) {
+                sum += column;
+            }
+        }
+
+        return sum / size;
+    }
+
+    public static int[] indexFound(String[][] arr, String target) {
+        int[] coords = {0, 0};
+
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = 0; j < arr[i].length; j++) {
+                if (arr[i][j].equals(target)) {
+                    coords = new int[] {i, j};
+                }
+            }
+        }
+
+        return coords;
+    }
 }
